@@ -15,7 +15,6 @@ connect.then(() => {
 		name: "React Lake Campground",
 		description: "test",
 	})
-
 		.then((campsite) => {
 			console.log(campsite);
 			return Campsite.find();
