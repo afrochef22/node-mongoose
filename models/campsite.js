@@ -1,6 +1,28 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const commentSchema = new Schema(
+	{
+		rating: {
+			type: Number,
+			min: 1,
+			max: 5,
+			requried: true,
+		},
+		text: {
+			type: String,
+			requried: true,
+		},
+		author: {
+			type: String,
+			requried: true,
+		},
+	},
+	{
+		timestamps: true,
+	}
+);
+
 const campsiteSchema = new Schema(
 	{
 		name: {
@@ -12,6 +34,7 @@ const campsiteSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		comments: [commentSchema],
 	},
 	{
 		timestamps: true,
